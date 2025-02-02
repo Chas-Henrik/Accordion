@@ -9,6 +9,7 @@
 .accordion {
     width: 100%;
     height: auto;
+    min-width: 20rem;
     padding: 1rem;
     display: block;
     box-shadow: 2px 2px 5px 0px #00000055;
