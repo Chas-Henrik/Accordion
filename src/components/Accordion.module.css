@@ -17,7 +17,7 @@
     transition: background-color 0.5s;
     > div:first-child {
         width: 100%;
-        padding: 1rem;
+        margin: 1rem auto;
         cursor: pointer;
         display: grid;
         grid-template-columns: 1fr 2rem;
@@ -26,6 +26,7 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.5;
+            transition: font-weight 0.5s;
         }
         > img {
             width: 2rem;
@@ -35,11 +36,9 @@
     }
     > div {
         width: 100%;
-        padding: 1rem;
+        margin: 1rem auto;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.5s;
         align-items: center;
         p {
             font-size: 1.6rem;
@@ -51,6 +50,15 @@
 
 .accordionCollapsed {
     background-color: #E9E9E9;
+    > div:last-child {
+        @media (prefers-reduced-motion: no-preference) {
+            interpolate-size: allow-keywords;
+        }
+        height: 0;
+        opacity: 0;
+        transition: all 0.5s allow-discrete;
+        overflow: hidden;
+    }
 }
 
 .accordionExpanded {
@@ -63,7 +71,13 @@
             transform: rotate(180deg);
         }
     }
-    > div {
-        grid-template-rows: 1fr;
+    > div:last-child {
+        @media (prefers-reduced-motion: no-preference) {
+            interpolate-size: allow-keywords;
+        }
+        height: auto;
+        opacity: 1;
+        transition: all 0.5s allow-discrete;
+        overflow: hidden;
     }
 }

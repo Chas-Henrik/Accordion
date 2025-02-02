@@ -14,7 +14,7 @@ export function Accordion({id, title, children}: AccordionProps): JSX.Element {
     return (
         <article key={id} className={styles.accordion + ' ' + (collapsed ? styles.accordionCollapsed : styles.accordionExpanded)}>
             <div onClick={handleClick}><h2>{title}</h2><img src="./src/assets/keyboard_arrow_down.svg" alt="Show/Hide Icon" /></div> 
-            {!collapsed && <div>{children}</div>}
+            <div>{children}</div>
         </article>
         )
 }
