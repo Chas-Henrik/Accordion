@@ -1,0 +1,69 @@
+*::before,
+*::after,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accordion {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    display: block;
+    box-shadow: 2px 2px 5px 0px #00000055;
+    border-radius: 10px;
+    text-align: left;
+    transition: background-color 0.5s;
+    > div:first-child {
+        width: 100%;
+        padding: 1rem;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 1fr 2rem;
+        align-items: center;
+        > h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        > img {
+            width: 2rem;
+            height: 2rem;
+            transition: all 0.5s;
+        }
+    }
+    > div {
+        width: 100%;
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.5s;
+        align-items: center;
+        p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+    }
+}
+
+.accordionCollapsed {
+    background-color: #E9E9E9;
+}
+
+.accordionExpanded {
+    background-color: white;
+    > div:first-child {
+        > h2 {
+            font-weight: 600;
+        }
+        > img {
+            transform: rotate(180deg);
+        }
+    }
+    > div {
+        grid-template-rows: 1fr;
+    }
+}
