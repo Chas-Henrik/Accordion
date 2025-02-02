@@ -29,8 +29,6 @@ function App() {
     )
   );
 
-  console.log(favFood);
-
   return (
     <>
       <section className="accordionList">
