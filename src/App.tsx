@@ -33,7 +33,7 @@ function App() {
     <>
       <section className="accordionList">
         {accordionItems}
-        <Accordion key="100" id="100" title="Select your favorite food:">
+        <Accordion key="100" id="100" title="What is your favorite food?">
           <form>
             <label htmlFor="pizza"><input id="pizza" type="radio" name="food" onChange={onRadioChange} checked={favFood==="pizza"}></input> Pizza</label>
             <label htmlFor="hamburger"><input id="hamburger" type="radio" name="food" onChange={onRadioChange} checked={favFood==="hamburger"}></input> Hamburger</label>
